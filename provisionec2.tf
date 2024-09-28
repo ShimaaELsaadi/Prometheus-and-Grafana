@@ -3,7 +3,7 @@ provider "aws" {
 
 }
 resource "aws_instance" "prometheus_grafana" {
-  ami           = "ami-0dba2cb6798deb6d8" 
+  ami           = "ami-0e42b3cc568cd07e3" 
   instance_type = "t2.micro"
 
   tags = {

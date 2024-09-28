@@ -65,10 +65,10 @@ user_data = <<-EOF
 
               EOF
 
-  vpc_security_group_ids = [aws_security_group.prometheus_grafana.id]
+  vpc_security_group_ids = [aws_security_group.prometheus_grafan.id]
 }
-resource "aws_security_group" "prometheus_grafana" {
-  name        = "prometheus_grafana"
+resource "aws_security_group" "prometheus_grafan" {
+  name        = "prometheus_grafan"
 
   ingress {
     from_port   = 9090

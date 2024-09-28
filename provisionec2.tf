@@ -4,7 +4,7 @@ provider "aws" {
 }
 resource "aws_instance" "prometheus_grafana" {
   ami           = "ami-0e42b3cc568cd07e3" 
-  instance_type = "t2.micro"
+  instance_type = "t3.micro"
 
   tags = {
     Name = "PrometheusGrafana"
@@ -65,7 +65,6 @@ user_data = <<-EOF
 
               EOF
 
-  # Enable inbound traffic for Prometheus (port 9090) and Grafana (port 3000)
   vpc_security_group_ids = [aws_security_group.prometheus_grafana_sgg.id]
 }
 resource "aws_security_group" "prometheus_grafana_sgg" {

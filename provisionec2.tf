@@ -66,7 +66,7 @@ user_data = <<-EOF
               EOF
 
   # Enable inbound traffic for Prometheus (port 9090) and Grafana (port 3000)
-  vpc_security_group_ids = [aws_security_group.prometheus_grafana_sg.id]
+  vpc_security_group_ids = [aws_security_group.prometheus_grafana_sgg.id]
 }
 resource "aws_security_group" "prometheus_grafana_sgg" {
   name        = "prometheus_grafana_sgg"

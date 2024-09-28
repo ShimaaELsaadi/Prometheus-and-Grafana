@@ -65,9 +65,9 @@ user_data = <<-EOF
 
               EOF
 
-  vpc_security_group_ids = [aws_security_group.prometheus_grafana_sgg.id]
+  vpc_security_group_ids = [aws_security_group.prometheus_grafana.id]
 }
-resource "aws_security_group" "prometheus_grafana_sgg" {
+resource "aws_security_group" "prometheus_grafana" {
   name        = "prometheus_grafana_sgg"
 
   ingress {

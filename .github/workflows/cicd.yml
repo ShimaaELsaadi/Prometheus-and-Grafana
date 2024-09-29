@@ -29,3 +29,19 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply -auto-approve
+        
+  ansible:
+          name: Configure EC2 with Ansible
+          runs-on: ubuntu-latest
+          needs: terraform
+          steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+      
+            - name: Install Ansible
+              run: sudo apt-get install -y ansible
+      
+            - name: Run Ansible Playbook
+              run: ansible-playbook -i hosts configration.yml
+              env:
+                ANSIBLE_HOST_KEY_CHECKING: 'false'

@@ -1,5 +1,5 @@
 ---
-- hosts: prometheus_grafanaa
+- hosts: ec2
   become: yes
   tasks:
     - name: Update APT package manager
